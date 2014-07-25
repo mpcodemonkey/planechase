@@ -8,6 +8,7 @@ import android.content.Context;
 import android.util.Log;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -67,6 +68,15 @@ public class DeckController {
     public Card getCurrentPlane() {
         // TODO Auto-generated method stub
         return this.currentPlane;
+    }
+
+    public void shuffle(){
+        Collections.shuffle(planeQueue);
+    }
+
+    public void randomizePlane(){
+        shuffle();
+        setCurrentPlane(planeQueue.peek());
     }
 
     public void setCurrentPlane(Card p) {

@@ -52,10 +52,16 @@ public class Card {
         this.planeType = planeType;
     }
 
+    public String toString(){
+        return this.imgPath;
+    }
+
     private int id;
     private String name;
     private String effect;
     private String chaos;
     private String imgPath;
     private String planeType;
+
+
 }

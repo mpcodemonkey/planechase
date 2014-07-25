@@ -7,6 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.MediaStore;
 import android.util.Log;
 
 import java.io.File;
@@ -179,6 +180,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         plane.setEffect(cursor.getString(2));
         plane.setChaos(cursor.getString(3));
         plane.setPlaneType(cursor.getString(4));
+        plane.setImgPath(cursor.getString(5));
 
         //log
         Log.d("getPlane("+id+")", plane.toString());
@@ -208,6 +210,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 plane.setEffect(cursor.getString(2));
                 plane.setChaos(cursor.getString(3));
                 plane.setPlaneType(cursor.getString(4));
+                plane.setImgPath(cursor.getString(5));
                 // Add plane to planes
                 planes.add(plane);
             } while (cursor.moveToNext());
@@ -218,6 +221,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         // return planes
         return planes;
     }
+
 
     public int update(Card plane)
     {
